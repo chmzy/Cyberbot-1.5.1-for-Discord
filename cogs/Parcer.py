@@ -7,10 +7,10 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
 import sys
-sys.path.append('C:\\DisBot\\cyberbot_oop\\db')
-import char_dict
-import pivo_dict
-import tutu_id_dict
+import db.char_dict
+import db.pivo_dict
+import db.serv_id_dict
+import db.tutu_id_dict
 
 
 class Parser(commands.Cog):
