@@ -33,18 +33,18 @@ async def on_ready():
 async def on_command_error(ctx, error):
     channel = ctx.message.channel
     if isinstance(error, commands.MissingRequiredArgument):
-        await ctx.send("Аргументов не хватает, довн.")
+        await ctx.send("Недостаточно аргументов")
         await asyncio.sleep(5)
         await channel.purge(limit=1)
     if isinstance(error, commands.CommandNotFound):
-        await ctx.send("Долбаёб, я не понимаю твой бред. Возможно, ког с этим бредом не загружен.")
+        await ctx.send("Модуль с этим функционалом на загружен.")
         await asyncio.sleep()
         await channel.purge(limit=1)
 
 # Цикличная смена статуса
 async def chng_pr():
-    status = ['=helpme для списка команд', 'Снизу пидор',
-              'discord.py v1.5.1','JS делает сас']
+    status = ['=helpme для списка команд',
+              'discord.py v1.5.1']
     
     await bot.wait_until_ready()
     while not bot.is_closed():
