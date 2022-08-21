@@ -9,34 +9,20 @@ from datetime import datetime
 class Chatrand(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-
-    #Тест на пидора
-    @commands.command()
-    async def pdr(self, ctx, member: discord.Member = None):
-        answers = [
-            f"Мне кажется, или человек с именем **{member.name}** по определению пидор? 🤔",
-            f"<:moon:334034106516242436> **{member.name}**, Однозначно вы натурал 😎",
-            f"👌 Без сомнений, **{member.name}** пидор 👌 ",
-            f"**{ctx.author.name}** А может ты пидор?"
-        ]
     
-        message = random.choice(answers)
-        embed = discord.Embed(title=message, color=discord.Color.blue(), inline=True)
-        await ctx.send(embed=embed)
-    
-    #Тест на левачество
+    #Тест на крутость
     @commands.command()
-    async def levak(self, ctx, member: discord.Member = None):
+    async def coolcheck(self, ctx, member: discord.Member = None):
         if member.id == 319170886345162754:
-            ans1 = [f"{member.name}, Байден бы тебе отсосал - ЛЕВЫЙ на 100%",
-                    f"{member.name}, без сомнений, вы ЛЕВАК на 100%"]
+            ans1 = [f"{member.name} несомненно круче всех!",
+                    f"{member.name}, вы самый крутой на сервере."]
             embed1 = discord.Embed(title=random.choice(
                 ans1), color=discord.Color.blue(), inline=True)
             await ctx.send(embed=embed1)
         else:
             percent = random.randint(0, 100)
-            ans = [f"Оказывается, {member.name} левый на {percent}%",
-                   f"Факт - {member.name} левый на все {percent}%"]
+            ans = [f"Оказывается, {member.name} крутой на {percent}%",
+                   f"Факт - {member.name} превосходит любого на {percent}%"]
             embed2 = discord.Embed(title=random.choice(
                 ans), color=discord.Color.blue(), inline=True)
             await ctx.send(embed=embed2)
